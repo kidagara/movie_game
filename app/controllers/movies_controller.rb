@@ -5,6 +5,10 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def list
+    @movie_info = MovieInfo.new('http://www.boxofficemojo.com/data/js/moviegross.php?id=starwars3.htm&shortgross=0')
+  end
+
   def show
   end
 

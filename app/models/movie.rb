@@ -12,4 +12,5 @@ class Movie < ActiveRecord::Base
       errors.add(:released_on, "must be between May 1 and August 31")
     end
   end
+
 end

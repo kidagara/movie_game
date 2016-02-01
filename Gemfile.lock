@@ -262,6 +262,7 @@ DEPENDENCIES
   minitest-rails
   minitest-rails-capybara
   minitest-reporters
+  nokogiri
   pg
   rack-livereload
   rails (= 4.2.5.1)
