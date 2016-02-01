@@ -139,7 +139,7 @@ GEM
       minitest-capybara (~> 0.7.0)
       minitest-metadata (~> 0.5.0)
       minitest-rails (~> 2.1)
-    minitest-reporters (1.1.4)
+    minitest-reporters (1.1.7)
       ansi
       builder
       minitest (>= 5.0)
@@ -159,8 +159,6 @@ GEM
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
-    rack-mini-profiler (0.9.7)
-      rack (>= 1.1.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5.1)
@@ -252,7 +250,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   database_cleaner
-  font-awesome-sass
+  font-awesome-sass (~> 4.5.0)
   foundation-rails
   git
   guard-livereload
@@ -266,7 +264,6 @@ DEPENDENCIES
   minitest-reporters
   pg
   rack-livereload
-  rack-mini-profiler
   rails (= 4.2.5.1)
   rake
   sass-rails (~> 5.0)

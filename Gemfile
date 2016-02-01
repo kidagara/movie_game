@@ -6,7 +6,7 @@ gem 'rails', '4.2.5.1'
 
 # gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 4.5.0'
 gem 'foundation-rails'
 gem 'git'
 gem 'jbuilder', '~> 2.0'
@@ -24,7 +24,6 @@ end
 
 group :development do
   gem 'rack-livereload'
-  gem 'rack-mini-profiler'
   gem 'spring'
   gem 'tunnelss'
   gem 'web-console', '~> 2.0'
