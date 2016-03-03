@@ -14,12 +14,16 @@
   </head>
 
   <body>
-    <div class="main-row-container row">
+    <div class="main-container row">
       <div class="main">
         <%= render "header" %>
-        <%= yield %>
+        <div class="large-12 columns">
+          <%= yield %>
+        </div>
       </div>
+      <div class="columns">
       <%= render "footer" %>
+      </div>
     </div>
   </body>
 </html>

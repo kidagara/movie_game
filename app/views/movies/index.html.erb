@@ -1,14 +1,17 @@
+<% content_for :title, "Summer Movies" %>
 <div class="row page-row">
 	<div class="small-12 columns">
 		<h1><%= Time.now.year %> Summer Movies</h1>
-	</div>
-	<div class="small-3 large-2 columns">
-		image
-	</div>
-	<div class="small-9 large-10 columns">
-		Title
+
+		  <p>
+			  <%= link_to new_movie_path do %>
+		      <span class="fa fa-plus-square-o"></span> Add a new movie
+		    <% end %>
+		  </p>
+
 	</div>
 </div>
-<hr/>
-<script type="text/javascript" language="javascript" src="http://www.boxofficemojo.com/data/js/moviegross.php?id=starwars3.htm&shortgross=0"></script>
-<hr/>
+
+<div class="row page-row">
+  <%= render @movies %>
+</div>

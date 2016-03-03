@@ -1,0 +1,16 @@
+<%= link_to edit_movie_path(movie) do %>
+	<div class="movie-in-list small-12 medium-3 large-2 columns end">
+		<div class="show-for-medium">
+			<%= image_tag movie.artwork_url.to_s %>
+		</div>
+		<div>
+			<%= movie.title %>
+		</div>
+		<div class="show-for-medium">
+			<%= movie.released_on.strftime("%b %e") %>
+		</div>
+		<div>
+			<%= number_to_currency(movie.box_office_earnings, precision: 0) %>
+		</div>
+	</div>
+<% end %>

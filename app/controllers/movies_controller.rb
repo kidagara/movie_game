@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
 
   def update
     if @movie.update_attributes(movie_params)
-      redirect_to movie_path(@movie), notice: %Q[Updated "#{@movie.title}" successfully.]
+      redirect_to movies_path, notice: %Q[Updated "#{@movie.title}" successfully.]
     else
       render :edit
     end

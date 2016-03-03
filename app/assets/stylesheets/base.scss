@@ -4,17 +4,17 @@
 
 html,
 body {
-	margin:0;
-	padding:0;
-	height:100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
 	background: #989898 !important;
 }
 
 .main {
-	padding-bottom:75px; /* Height of the footer element */
+	padding-bottom: 75px; /* Height of the footer element */
 }
 
-.main-row-container {
+.main-container {
 	background: white;
 	min-height:100%;
 	position: relative;
@@ -46,10 +46,6 @@ header {
 	font-size: 48px;
 }
 
-.page-row {
-	margin-left: 0px !important;
-}
-
 // footer //////////////////////////////////////////////////////////////////
 
 .site-footer {
@@ -60,7 +56,5 @@ header {
 	height: 75px;
   width: 100%;
   font-size: 0.75rem;
-  section {
-  	margin-left: 0px !important;
-  }
+  left: 0px;
 }

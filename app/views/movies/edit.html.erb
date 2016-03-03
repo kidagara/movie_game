@@ -1,0 +1,12 @@
+<% content_for :title, "Edit #{@movie.title}" %>
+
+<div class="row page-row">
+  <div class="column">
+		<h1><%= "Edit #{@movie.title}" %></h1>
+		<%= render "form" %>
+		<%= link_to movie_path(@movie), class: "button secondary", data: { confirm: %(Are you sure you want to delete "#{@movie.title}"? This cannot be undone.) }, method: :delete do %>
+	    <span class="fa fa-trash-o"></span>
+	    Delete Movie
+	  <% end %>
+	</div>
+</div>

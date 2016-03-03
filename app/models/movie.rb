@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
 
+  mount_uploader :artwork, ArtworkUploader
+
   validates :title, presence: true
   validates :released_on, presence: true
   validates :imdb_link, format: { with: URI.regexp, message: "must be a valid URL" }, if: Proc.new { |movie| movie.imdb_link.present? }
@@ -12,4 +14,5 @@ class Movie < ActiveRecord::Base
       errors.add(:released_on, "must be between May 1 and August 31")
     end
   end
+    
 end
