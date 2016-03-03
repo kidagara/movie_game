@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= locale %>">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,22 +7,22 @@
     <title><%= full_title yield(:title) %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
     <div class="main-container row">
       <div class="main">
-        <%= render "header" %>
+        <%= render "site_header" %>
         <div class="large-12 columns">
           <%= yield %>
         </div>
       </div>
       <div class="columns">
-      <%= render "footer" %>
+      <%= render "site_footer" %>
       </div>
     </div>
   </body>

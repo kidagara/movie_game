@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <hr/>
+  <section class="row">
+    <div class="medium-7 columns">
+      <ul class="inline-list">
+        <li>&copy; <%= Time.now.year %> Wavetronix LLC.</li>
+      </ul>
+    </div>
+    <div class="medium-5 columns end hide-for-small">
+      <ul class="inline-list right">
+        <% if current_user %>
+          <li>
+            <%= current_user.name %>
+          </li>
+          <li><%= link_to "Sign Out", sign_out_path, title: "Sign out" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</footer>

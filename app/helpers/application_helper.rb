@@ -1,9 +1,9 @@
 module ApplicationHelper
   def full_title(page_title = nil)
     if page_title.present?
-      "Movie Game - #{page_title}"
+      "Wavetronix Family Survey - #{page_title}"
     else
-      "Movie Game"
+      "Wavetronix Family Survey"
     end
   end
 end

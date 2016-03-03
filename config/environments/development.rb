@@ -14,7 +14,9 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :amazon_ses
+  config.action_mailer.default_url_options = { :host => "survey.wavetronix.dev" }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -38,4 +40,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.serve_static_files = true
+  config.assets.prefix = "/dev-assets"
+
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  # config.force_ssl = true
+
+  # Add Rack::LiveReload to the bottom of the middleware stack with the
+  # default options.
+  config.middleware.use Rack::LiveReload, no_swf: true
+
 end

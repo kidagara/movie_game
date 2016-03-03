@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  get "/sign_in", to: "sessions#new"
-  delete "/sign_out", to: "sessions#destroy"
-  get "/auth/:provider/callback", to: "sessions#create"
-  get "/auth/failure", to: redirect("/")
+  get "/sessions/new", to: "sessions#new", as: :sign_in
+  get "/auth/failure", to: "identities#authentication_failure"
+  post "/auth/:provider/callback", to: "sessions#create"
+  get "/sign_out", to: "sessions#destroy", as: :sign_out
 
-	resources :movies, :lists, :users, :sessions
+  resources :identities, :users, :families, :reports
 
-  root to: "home#index"
+  root to: "families#index"
+
 end

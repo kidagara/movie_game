@@ -1,0 +1,42 @@
+<% content_for :title, "Register your family" %>
+<h1>Step One</h1>
+<h2>Employee Information</h2>
+<p>Please enter the information below for you, the employee.</p>
+
+<%= form_tag "/auth/identity/register" do %>
+  <% if @identity && @identity.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <ul>
+      <% @identity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= label_tag "Your first name" %>
+  <%= text_field_tag :first_name, @identity.try(:first_name) %>
+
+  <%= label_tag "Your last name" %>
+  <%= text_field_tag :last_name, @identity.try(:last_name) %>
+
+
+  <%= label_tag "Your work email" %>
+  <%= email_field_tag :email, @identity.try(:email) %>
+
+  <p>Please enter in a password so you can edit your family information later if needed</p>
+  <div class="row">
+    <div class="medium-6 columns">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="medium-6 columns">
+      <%= label_tag :password_confirmation %>
+      <%= password_field_tag :password_confirmation %>
+    </div>
+  </div>
+
+  <%= submit_tag "Continue to Step Two", class: "button radius" %>
+<% end %>

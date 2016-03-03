@@ -1,0 +1,36 @@
+<%= form_for @family do |f| %>
+  <%= content_tag :div, class: 'alert-box radius alert' do %>
+    <h4><%= pluralize @family.errors.count, 'error' %> kept this form from submitting:</h4>
+    <ul>
+      <% if @family.members_over18.blank? %>
+        <p>There cannot be a household without a person over 18. Please remember to include the heads of household.</p>
+      <% else %>
+        <% @family.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end if @family.errors.any? %>
+  <div class="columns">
+    <%= f.label :family_name %>
+    <%= f.text_field :family_name %>
+    <p>For each field below, please type in how many in the family are in the age bracket that are planning to attend. Please note that this is the age they will be by August 2nd of this year. Please include the head of household and their spouse as well!</p>
+    <%= f.label "Children under 2 years old" %>
+    <%= f.number_field :members_under2, :placeholder => "0" %>
+    <%= f.label "Children 2-5 years old" %>
+    <%= f.number_field :members_2to5, :placeholder => "0" %>
+    <%= f.label "Children 6-12 years old" %>
+    <%= f.number_field :members_6to12, :placeholder => "0" %>
+    <%= f.label "Children 13-17 years old" %>
+    <%= f.number_field :members_13to17, :placeholder => "0" %>
+    <%= f.label "Family members 18 years or older" %>
+    <%= f.number_field :members_over18, :placeholder => "0" %>
+
+    <p>To create a another new family (for example, if your children do not live at home and have their own seperate family), you will be given a chance to do so in the next step.</p>
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
+      <%= f.submit "Add your family", class: 'button radius expand' %>
+    </div>
+  </div>
+<% end %>
