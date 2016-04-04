@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def destroy
     authorize @user
-    @user.families.destroy_all
+    @user.lists.destroy_all
     @user.destroy
     redirect_to users_path, notice: %(Deleted "#{@user.name}" successfully.)
   end

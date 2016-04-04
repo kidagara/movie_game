@@ -11,22 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108175248) do
+ActiveRecord::Schema.define(version: 20160404172613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "families", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "family_name"
-    t.integer  "members_under2"
-    t.integer  "members_2to5"
-    t.integer  "members_6to12"
-    t.integer  "members_13to17"
-    t.integer  "members_over18"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "identities", force: :cascade do |t|
     t.string   "first_name"
@@ -36,6 +24,51 @@ ActiveRecord::Schema.define(version: 20160108175248) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "movie_one"
+    t.string   "movie_two"
+    t.string   "movie_three"
+    t.string   "movie_four"
+    t.string   "movie_five"
+    t.string   "movie_six"
+    t.string   "movie_seven"
+    t.string   "movie_eight"
+    t.string   "movie_nine"
+    t.string   "movie_ten"
+    t.string   "movie_darkhorse_one"
+    t.string   "movie_darkhorse_two"
+    t.string   "movie_darkhorse_three"
+    t.integer  "movie_one_points"
+    t.integer  "movie_two_points"
+    t.integer  "movie_three_points"
+    t.integer  "movie_four_points"
+    t.integer  "movie_five_points"
+    t.integer  "movie_six_points"
+    t.integer  "movie_seven_points"
+    t.integer  "movie_eight_points"
+    t.integer  "movie_nine_points"
+    t.integer  "movie_ten_points"
+    t.integer  "movie_darkhorse_one_points"
+    t.integer  "movie_darkhorse_two_points"
+    t.integer  "movie_darkhorse_three_points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string   "movie_name"
+    t.string   "movie_poster"
+    t.string   "imdb_url"
+    t.date     "release_date"
+    t.text     "movie_description"
+    t.integer  "boxoffice_earnings", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "movies", ["movie_name"], name: "index_movies_on_movie_name", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

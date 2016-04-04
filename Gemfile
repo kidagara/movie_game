@@ -12,6 +12,7 @@ gem 'foundation-rails'
 gem 'git'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem "mini_magick"
 gem 'pg'
 gem 'pundit'
 gem 'rolify'

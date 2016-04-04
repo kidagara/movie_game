@@ -11,13 +11,14 @@ body {
 }
 
 .main {
-	padding-bottom: 75px; /* Height of the footer element */
+	//margin-bottom: 75px; /* Height of the footer element */
 }
 
 .main-container {
 	background: white;
 	min-height:100%;
 	position: relative;
+	padding-bottom: 75px;
 }
 
 // header /////////////////////////////////////////////////////////////////////
@@ -46,15 +47,28 @@ header {
 	font-size: 48px;
 }
 
+// movie ///////////////////////////////////////////////////////////////////
+
+.wtx-movie {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+.wtx-movie-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 // footer //////////////////////////////////////////////////////////////////
 
 .site-footer {
   color: #888888;
   position: absolute;
   bottom: 0;
-	margin-top: -75px; /* negative value of footer height */
+	margin-top: 75px; /* negative value of footer height */
 	height: 75px;
   width: 100%;
   font-size: 0.75rem;
   left: 0px;
+  //border: 1px solid red;
 }

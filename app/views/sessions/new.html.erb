@@ -1,22 +1,19 @@
-<div class="row">
-  <h1>Wavetronix Family Survey</h1>
-  <p>In preparation for the upcoming family week excursion, please take a moment to fill out the following survey. To access the survey, click on the button below to sign up your family. The survey will be used to determine how many people/families are planning on attending so we know who to expect, what to plan for and what to bring.</p>
-  <p>It is critical that you fill out this survey completely and correctly by <b>Friday, January 15th</b> so we can plan for the upcoming family excursion. Thank you.</p>
-  <hr/>
+<% content_for :title, "Sign In" %>
+
+<section>
   <div class="medium-6 columns">
-    <h3>Take the survey</h3>
-    <p>If this is your first time to this page, sign up your family by clicking the button below and filling out the survey</p>
-    <%= button_to "Start the survey", new_identity_path, class: "button radius", method: :get %>
-  </div>
-  <div class="medium-6 columns">
-    <h3>Edit your family</h3>
-    <p>If you have already taken the survey and need to make some changes to your family, click the button below. Please note all edits are final on <b>Friday, January 15th</b></p>
+    <h2>Sign in</h2>
     <%= form_tag "/auth/identity/callback" do %>
-        <%= label_tag :auth_key, "Wavetronix Email" %>
-        <%= email_field_tag :auth_key %>
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
-        <%= submit_tag "Sign In", class: "button radius" %>
-      <% end %>
+      <%= label_tag :auth_key, "Wavetronix Email" %>
+      <%= email_field_tag :auth_key %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Sign In", class: "button radius" %>
+    <% end %>
   </div>
-</div>
+  <div class="medium-6 columns">
+    <h2>Don't have an account?</h2>
+    <p>In order to make and edit your movie list, you'll need to create an account. Don't worry, it's mostly painless.</p>
+    <%= button_to "Create your account", new_identity_path, class: "button radius", method: :get %>
+  </div>
+</section>

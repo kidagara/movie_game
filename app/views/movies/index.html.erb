@@ -1,0 +1,6 @@
+<% content_for :title, "Movies" %>
+<h1>Movies</h1>
+<p><%= link_to "Create a new movie", new_movie_path, class: "button radius" %></p>
+<div class="columns">
+	<%= render @movies %>
+</div>

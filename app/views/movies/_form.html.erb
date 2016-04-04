@@ -1,0 +1,23 @@
+<%= form_for @movie do |f| %>
+  <%= content_tag :div, class: "alert-box alert" do %>
+    <h4><%= pluralize @movie.errors.count, "error" %> kept this form from submitting:</h4>
+    <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end if @movie.errors.any? %>
+  <%= f.label :movie_name %>
+  <%= f.text_field :movie_name %>
+  <%= f.label :movie_poster %>
+  <%= f.file_field :movie_poster %>
+  <%= f.label :release_date %>
+  <%= f.date_field :release_date, prompt: "yyyy-mm-dd" %>
+  <%= f.label :imdb_url, "IMDB link" %>
+  <%= f.url_field :imdb_url, prompt: "http://imdb.com/" %>
+  <%= f.label :boxoffice_earnings %>
+  <%= f.number_field :boxoffice_earnings %>
+  <%= f.label :movie_description %>
+  <%= f.text_area :movie_description %>
+  <%= f.submit nil, class: "button radius" %>
+<% end %>
