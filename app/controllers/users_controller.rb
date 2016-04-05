@@ -26,7 +26,6 @@ class UsersController < ApplicationController
 
   def destroy
     authorize @user
-    @user.lists.destroy_all
     @user.destroy
     redirect_to users_path, notice: %(Deleted "#{@user.name}" successfully.)
   end
@@ -38,7 +37,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+    params.require(:user).permit(:first_name, :last_name, :email, :movie_one, :movie_two, :movie_three, :movie_four, :movie_five, :movie_six, :movie_seven, :movie_eight, :movie_nine, :movie_ten, :movie_darkhorse_one, :movie_darkhorse_two, :movie_darkhorse_three, :movie_one_points, :movie_two_points, :movie_three_points, :movie_four_points, :movie_five_points, :movie_six_points, :movie_seven_points, :movie_eight_points, :movie_nine_points, :movie_ten_points, :movie_darkhorse_one_points, :movie_darkhorse_two_points, :movie_darkhorse_three_points)
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404172613) do
+ActiveRecord::Schema.define(version: 20160405171610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,38 +21,6 @@ ActiveRecord::Schema.define(version: 20160404172613) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "lists", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "movie_one"
-    t.string   "movie_two"
-    t.string   "movie_three"
-    t.string   "movie_four"
-    t.string   "movie_five"
-    t.string   "movie_six"
-    t.string   "movie_seven"
-    t.string   "movie_eight"
-    t.string   "movie_nine"
-    t.string   "movie_ten"
-    t.string   "movie_darkhorse_one"
-    t.string   "movie_darkhorse_two"
-    t.string   "movie_darkhorse_three"
-    t.integer  "movie_one_points"
-    t.integer  "movie_two_points"
-    t.integer  "movie_three_points"
-    t.integer  "movie_four_points"
-    t.integer  "movie_five_points"
-    t.integer  "movie_six_points"
-    t.integer  "movie_seven_points"
-    t.integer  "movie_eight_points"
-    t.integer  "movie_nine_points"
-    t.integer  "movie_ten_points"
-    t.integer  "movie_darkhorse_one_points"
-    t.integer  "movie_darkhorse_two_points"
-    t.integer  "movie_darkhorse_three_points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,6 +58,32 @@ ActiveRecord::Schema.define(version: 20160404172613) do
     t.string   "auth_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "movie_one"
+    t.string   "movie_two"
+    t.string   "movie_three"
+    t.string   "movie_four"
+    t.string   "movie_five"
+    t.string   "movie_six"
+    t.string   "movie_seven"
+    t.string   "movie_eight"
+    t.string   "movie_nine"
+    t.string   "movie_ten"
+    t.string   "movie_darkhorse_one"
+    t.string   "movie_darkhorse_two"
+    t.string   "movie_darkhorse_three"
+    t.integer  "movie_one_points"
+    t.integer  "movie_two_points"
+    t.integer  "movie_three_points"
+    t.integer  "movie_four_points"
+    t.integer  "movie_five_points"
+    t.integer  "movie_six_points"
+    t.integer  "movie_seven_points"
+    t.integer  "movie_eight_points"
+    t.integer  "movie_nine_points"
+    t.integer  "movie_ten_points"
+    t.integer  "movie_darkhorse_one_points"
+    t.integer  "movie_darkhorse_two_points"
+    t.integer  "movie_darkhorse_three_points"
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/auth/:provider/callback", to: "sessions#create"
   get "/sign_out", to: "sessions#destroy", as: :sign_out
 
-  resources :identities, :users, :reports, :movies, :lists
+  resources :identities, :users, :movies
 
   root to: "movies#index"
 

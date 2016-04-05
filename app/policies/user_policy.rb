@@ -1,7 +1,4 @@
 class UserPolicy < ApplicationPolicy
-  def index?
-    user && user.has_role?(:admin)
-  end
 
   def show?
     user && (user == record || user.has_role?(:admin))

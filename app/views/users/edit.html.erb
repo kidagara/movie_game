@@ -1,14 +1,9 @@
 <% content_for :title, "Edit #{@user.name}" %>
-<h1><%= "Edit #{@user.name}" %></h1>
+<div class="columns">
 
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <div class="row">
-    <%= f.submit class: 'button radius expand' %>
-  </div>
-<% end %>
+<h1><%= "Edit #{@user.name}'s list" %></h1>
+<p>Either select the movie from the dropdown list, or click the box with your mouse and start typing the name of the movie you'd like to choose.</p>
+
+<%= render "form" %>
+
+</div>

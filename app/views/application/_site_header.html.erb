@@ -6,10 +6,11 @@
     <ul>
       <li><%= link_to "movies", movies_path %></li>
       <% if current_user %>
-        <li><%= link_to "#{current_user.first_name}'s list", lists_path %></li>
-        <li><%= link_to "all lists", root_path %></li>
+        <li><%= link_to "#{current_user.first_name}'s list", current_user %></li>
+        <li><%= link_to "all lists", users_path %></li>
+        <li><%= link_to "sign out", sign_out_path %></li>
       <% else %>
-        <li><%= link_to "sign in", root_path %></li>
+        <li><%= link_to "sign in", sign_in_path %></li>
       <% end %>
     </ul>
     <hr/>

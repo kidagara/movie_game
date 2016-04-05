@@ -1,12 +1,73 @@
-<tr>
-  <td>
-    <%= link_to edit_user_path(user), title: %(Edit "#{user.name}") do %>
-      <strong><%= user.name %></strong>
-    <% end %>
-  </td>
-  <td class="hide-for-small"><%= user.email %></td>
-  <td class="text-right"><%= user.lists.count %></td>
-  <td class="hide-for-small">
-    <%= link_to 'Delete User', user_path(user), class: 'button tiny radius delete', data: { confirm: %(Are you sure you want to delete "#{user.name}?" This cannot be undone.) }, method: :delete %>
-  </td>
-</tr>
+<div class="medium-6 columns">
+	<table>
+		<thead>
+			<tr>
+				<% if current_user.has_role?(:admin) %>
+					<th>
+						<%= link_to user.name, edit_user_path(user) %> <small><%= user.email %></small>
+					</th>
+					<th class="hide-for-small text-right"><%= link_to 'Delete User', user_path(user), class: 'button tiny radius delete', data: { confirm: %(Are you sure you want to delete "#{user.name}?" This cannot be undone.) }, method: :delete %>
+					</th>
+				<% else %>
+					<th><%= user.name %></th>
+					<th></th>
+				<% end %>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><div class="place">1st: </div><%= user.movie_one %></td>
+				<td class="hide-for-small"><%= user.movie_one_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">2nd: </div><%= user.movie_two %></td>
+				<td class="hide-for-small"><%= user.movie_two_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">3rd: </div><%= user.movie_three %></td>
+				<td class="hide-for-small"><%= user.movie_three_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">4th: </div><%= user.movie_four %></td>
+				<td class="hide-for-small"><%= user.movie_four_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">5th: </div><%= user.movie_five %></td>
+				<td class="hide-for-small"><%= user.movie_five_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">6th: </div><%= user.movie_six %></td>
+				<td class="hide-for-small"><%= user.movie_six_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">7th: </div><%= user.movie_seven %></td>
+				<td class="hide-for-small"><%= user.movie_seven_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">8th: </div><%= user.movie_eight %></td>
+				<td class="hide-for-small"><%= user.movie_eight_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">9th: </div><%= user.movie_nine %></td>
+				<td class="hide-for-small"><%= user.movie_nine_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">10th: </div><%= user.movie_ten %></td>
+				<td class="hide-for-small"><%= user.movie_ten_points %></td>
+			</tr>
+
+			<tr>
+				<td><div class="place">Darkhorse 1:</div> <%= user.movie_darkhorse_one %></td>
+				<td class="hide-for-small"><%= user.movie_darkhorse_one_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">Darkhorse 2:</div> <%= user.movie_darkhorse_two %></td>
+				<td class="hide-for-small"><%= user.movie_darkhorse_two_points %></td>
+			</tr>
+			<tr>
+				<td><div class="place">Darkhorse 3:</div> <%= user.movie_darkhorse_three %></td>
+				<td class="hide-for-small"><%= user.movie_darkhorse_three_points %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,108 @@
+<%= form_for @user do |f| %>
+  <%= content_tag :div, class: 'alert-box radius alert' do %>
+    <h4><%= pluralize @user.errors.count, 'error' %> kept this form from submitting:</h4>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end if @user.errors.any? %>
+  <div class="columns">
+    1st: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_one, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "1st Place points" %>
+      <%= f.text_field :movie_one_points, :placeholder => "0" %>
+    <% end %>
+
+    2nd: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_two, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "2nd Place points" %>
+      <%= f.text_field :movie_two_points, :placeholder => "0" %>
+    <% end %>
+
+    3rd: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_three, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "3rd Place points" %>
+      <%= f.text_field :movie_three_points, :placeholder => "0" %>
+    <% end %>
+
+    4th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_four, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "4th Place points" %>
+      <%= f.text_field :movie_four_points, :placeholder => "0" %>
+    <% end %>
+
+    5th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_five, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "5th Place points" %>
+      <%= f.text_field :movie_five_points, :placeholder => "0" %>
+    <% end %>
+
+    6th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_six, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "6th Place points" %>
+      <%= f.text_field :movie_six_points, :placeholder => "0" %>
+    <% end %>
+
+    7th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_seven, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "7th Place points" %>
+      <%= f.text_field :movie_seven_points, :placeholder => "0" %>
+    <% end %>
+
+    8th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_eight, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "8th Place points" %>
+      <%= f.text_field :movie_eight_points, :placeholder => "0" %>
+    <% end %>
+
+    9th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_nine, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "9th Place points" %>
+      <%= f.text_field :movie_nine_points, :placeholder => "0" %>
+    <% end %>
+
+    10th: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_ten, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "10th Place points" %>
+      <%= f.text_field :movie_ten_points, :placeholder => "0" %>
+    <% end %>
+
+    Darkhorse 1: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_darkhorse_one, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "Darkhorse 1 points" %>
+      <%= f.text_field :movie_darkhorse_one_points, :placeholder => "0" %>
+    <% end %>
+
+    Darkhorse 2: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_darkhorse_two, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "Darkhorse 2 points" %>
+      <%= f.text_field :movie_darkhorse_two_points, :placeholder => "0" %>
+    <% end %>
+
+    Darkhorse 3: <% options = options_from_collection_for_select(Movie.all, 'movie_name', 'movie_name') %>
+    <%= f.select :movie_darkhorse_three, options, :prompt => "Please select a movie..." %>
+    <% if current_user.has_role?(:admin) %>
+      <%= f.label "Darkhorse 3 points" %>
+      <%= f.text_field :movie_darkhorse_three_points, :placeholder => "0" %>
+    <% end %>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.submit "Update your user", class: 'button radius expand' %>
+      </div>
+    </div>
+  </div>
+<% end %>
