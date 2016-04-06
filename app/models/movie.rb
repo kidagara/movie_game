@@ -1,5 +1,4 @@
 class Movie < ActiveRecord::Base
-  mount_uploader :movie_poster, MoviePosterUploader
 
   validate :released_during_summer
 
