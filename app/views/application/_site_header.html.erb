@@ -4,8 +4,8 @@
   </div>
   <hr/>
     <ul>
-      <li><%= link_to "movies", movies_path %></li>
       <% if current_user %>
+        <li><%= link_to "movies", movies_path %></li>
         <li><%= link_to "#{current_user.first_name}'s list", current_user %></li>
         <li><%= link_to "all lists", users_path %></li>
         <li><%= link_to "sign out", sign_out_path %></li>

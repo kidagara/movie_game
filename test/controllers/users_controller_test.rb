@@ -45,9 +45,9 @@ describe UsersController do
   end
 
   describe "with an unauthorized user" do
-    it "doesn't get index" do
+    it "does get index" do
       get :index
-      must_respond_with :redirect
+      must_respond_with :success
     end
 
     it "doesn't get other user show" do

@@ -1,4 +1,4 @@
-<% content_for :title, "Register your family" %>
+<% content_for :title, "Register" %>
 <h2>Create a new account</h2>
 <p>Please enter your information below.</p>
 
@@ -26,7 +26,7 @@
     </div>
 
     <div class="columns">
-    <%= label_tag "Your email" %>
+    <%= label_tag "Your wavetronix email" %>
     <%= email_field_tag :email, @identity.try(:email) %>
     </div>
 

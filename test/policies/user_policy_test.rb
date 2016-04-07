@@ -43,7 +43,7 @@ describe UserPolicy do
 
   describe "for unauthorized user" do
     it "prohibits index" do
-      :user.wont_permit user, :index
+      :user.must_permit user, :index
     end
 
     it "permits show of current user" do

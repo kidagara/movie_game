@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'git'
+gem 'imdb', '~> 0.8'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem "mini_magick"

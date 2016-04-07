@@ -3,7 +3,7 @@ require "test_helper"
 feature "Authentication" do
   scenario "the test is sound" do
     visit root_path
-    page.must_have_content "Take the survey"
+    page.must_have_content "Movie"
   end
 
   # scenario "create a new account and log out" do

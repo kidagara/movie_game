@@ -1,6 +1,6 @@
 <%= link_to movie_path(movie) do %>
   <div class="medium-3 columns">
-    <%= image_tag movie.movie_poster.thumb %>
+    <%= image_tag movie.movie_poster.to_s %>
     <p><%= movie.movie_name %><br/>
     <%= movie.release_date.to_s :short %></p>
   </div>
