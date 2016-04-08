@@ -1,18 +1,21 @@
 <%= content_for :title, @movie.movie_name %>
-<h1><%= @movie.movie_name %></h1>
+<% i = Imdb::Movie.new("#{@movie.movie_name}") %>
+<h1><%= i.title %></h1>
+
+
 <div class="row">
   <div class="medium-4 columns">
-    <%= image_tag @movie.movie_poster, alt: @movie.movie_name %>
+    <%= image_tag @movie.movie_poster, alt: i.title %>
   </div>
   <div class="medium-8 columns">
     <%= content_tag :p do %>
       <strong>Description:</strong> <br/>
-      <%= @movie.movie_description %>
-    <% end if @movie.movie_description.present? %>
-    <strong>Release date:</strong> <%= @movie.release_date.to_s :short %>
+      <%= i.plot_summary %>
+    <% end %>
+    <strong>Release date:</strong> <%= i.release_date %>
     <%= content_tag :p do %>
-      <strong>IMDB link:</strong> <%= link_to @movie.imdb_url, target: "_blank"%>
-    <% end if @movie.imdb_url.present? %>
+      <strong>Trailer link:</strong> <%= link_to i.trailer_url, target: "_blank"%>
+    <% end if i.trailer_url.present?%>
     <%= content_tag :p do %>
       <strong>Box office earnings:</strong> <%= number_to_currency @movie.boxoffice_earnings, precision: 0 %>
     <% end if @movie.boxoffice_earnings > 0 %>
@@ -21,7 +24,7 @@
         <span class="fa fa-pencil"></span>
         Edit
       <% end %>
-      <%= link_to movie_path(@movie), data: {confirm: %Q[Are you sure you want to delete #{@movie.movie_name}? This cannot be undone!]}, method: :delete, class: "button radius alert" do %>
+      <%= link_to movie_path(@movie), data: {confirm: %Q[Are you sure you want to delete #{i.title}? This cannot be undone!]}, method: :delete, class: "button radius alert" do %>
       <span class="fa fa-trash"></span>
       Delete
       <% end %>

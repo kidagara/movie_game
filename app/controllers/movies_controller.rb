@@ -17,7 +17,10 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
+    i = Imdb::Movie.new("#{@movie.movie_name}")
     if @movie.save
+      @movie.movie_description = i.title
+      @movie.save!
       redirect_to movies_path, notice: %Q[Saved "#{@movie.movie_name}" successfully.]
     else
       render :new

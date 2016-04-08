@@ -7,17 +7,11 @@
       <% end %>
     </ul>
   <% end if @movie.errors.any? %>
-  <%= f.label :movie_name %>
+  <%= f.label "Movie number" %><small>To find this, go to the page on IMDB for the movie. In the URL after "tt" will be the number. For example, Warcraft is 0803096</small>
   <%= f.text_field :movie_name %>
   <%= f.label :movie_poster %>
   <%= f.text_field :movie_poster %>
-  <%= f.label :release_date %>
-  <%= f.date_field :release_date, prompt: "yyyy-mm-dd" %>
-  <%= f.label :imdb_url, "IMDB link" %>
-  <%= f.url_field :imdb_url, prompt: "http://imdb.com/" %>
   <%= f.label :boxoffice_earnings %>
   <%= f.number_field :boxoffice_earnings %>
-  <%= f.label :movie_description %>
-  <%= f.text_area :movie_description %>
   <%= f.submit nil, class: "button radius" %>
 <% end %>
