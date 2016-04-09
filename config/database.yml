@@ -1,5 +1,3 @@
-<% branch = Git.open(".").current_branch %>
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -7,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: movie_game_development-<%= branch %>
+  database: movie_game_development
 
 test:
   <<: *default
-  database: movie_game_test-<%= branch %>
+  database: movie_game_test
 
 production:
   <<: *default
