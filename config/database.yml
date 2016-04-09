@@ -15,4 +15,4 @@ test:
 
 production:
   <<: *default
-  database: movie_game_development-<%= branch %>
+  database: movie_game_development
