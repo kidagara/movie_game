@@ -1,6 +1,8 @@
 <% content_for :title, "Movies" %>
 <h1>Movies</h1>
+<% if current_user.has_role?(:admin) %>
 <p><%= link_to "Create a new movie", new_movie_path, class: "button radius" %></p>
+<% end %>
 <div class="columns">
 	<%= render @movies %>
 </div>
