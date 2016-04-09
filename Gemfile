@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem "mini_magick"
 gem 'pg'
 gem 'pundit'
+gem 'rails_12factor', group: :production
 gem 'rolify'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
@@ -49,6 +50,5 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'rails_12factor'
   gem 'unicorn'
 end
