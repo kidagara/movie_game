@@ -19,14 +19,16 @@
     <%= content_tag :p do %>
       <strong>Box office earnings:</strong> <%= number_to_currency @movie.boxoffice_earnings, precision: 0 %>
     <% end if @movie.boxoffice_earnings > 0 %>
-    <p>
-      <%= link_to edit_movie_path(@movie), class: "button radius" do %>
-        <span class="fa fa-pencil"></span>
-        Edit
-      <% end %>
-      <%= link_to movie_path(@movie), data: {confirm: %Q[Are you sure you want to delete #{i.title}? This cannot be undone!]}, method: :delete, class: "button radius alert" do %>
-      <span class="fa fa-trash"></span>
-      Delete
+    <% if current_user.has_role?(:admin) %>
+      <p>
+        <%= link_to edit_movie_path(@movie), class: "button radius" do %>
+          <span class="fa fa-pencil"></span>
+          Edit
+        <% end %>
+        <%= link_to movie_path(@movie), data: {confirm: %Q[Are you sure you want to delete #{i.title}? This cannot be undone!]}, method: :delete, class: "button radius alert" do %>
+        <span class="fa fa-trash"></span>
+        Delete
+        <% end %>
       <% end %>
     </p>
   </div>
