@@ -68,6 +68,14 @@
 				<td><div class="place">Darkhorse 3:</div> <%= user.movie_darkhorse_three %></td>
 				<td class="hide-for-small"><%= user.movie_darkhorse_three_points %></td>
 			</tr>
+			<% if current_user.has_role?(:admin) %>
+				<tr>
+					<td>
+					<%= link_to "Edit #{user.first_name}'s List", edit_user_path(user), class: 'button tiny radius' %>
+					</th>
+					<th></th>
+				</tr>
+			<% end %>
 		</tbody>
 	</table>
 </div>

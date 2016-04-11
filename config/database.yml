@@ -1,3 +1,4 @@
+<% branch = Git.open(".").current_branch %>
 
 default: &default
   adapter: postgresql
@@ -6,14 +7,14 @@ default: &default
 
 development:
   <<: *default
-  database: movie_game_development
+  database: movie_game_development-<%= branch %>
 
 test:
   <<: *default
-  database: movie_game_test
+  database: movie_game_test-<%= branch %>
 
 production:
   <<: *default
-  database: movie_game_development
+  database: movie_game_development-<%= branch %>
 
 # Before deploying to Heroku, remove branch stuff
