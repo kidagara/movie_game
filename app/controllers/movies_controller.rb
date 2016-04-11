@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_filter :find_movie
 
   def index
-    @movies = Movie.all
+    @movies = Movie.order(:release_date)
   end
 
   def show
@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
     i = Imdb::Movie.new("#{@movie.movie_name}")
     if @movie.save
       @movie.movie_description = i.title
+      @movie.release_date = i.release_date
       @movie.save!
       redirect_to movies_path, notice: %Q[Saved "#{@movie.movie_name}" successfully.]
     else
@@ -29,6 +30,9 @@ class MoviesController < ApplicationController
 
   def update
     if @movie.update_attributes(movie_params)
+      i = Imdb::Movie.new("#{@movie.movie_name}")
+      @movie.release_date = i.release_date
+      @movie.save!
       redirect_to movie_path(@movie), notice: %Q[Updated "#{@movie.movie_name}" successfully.]
     else
       render :edit
