@@ -8,10 +8,9 @@
     <%= image_tag @movie.movie_poster, alt: i.title %>
   </div>
   <div class="medium-8 columns">
-    <%= content_tag :p do %>
-      <strong>Description:</strong> <br/>
-      <%= i.plot_summary %>
-    <% end %>
+    <strong>Description:</strong> <br/>
+    <%= i.plot_summary %><br/>
+    <strong>Rating:</strong> <%= i.mpaa_rating %><br/>
     <strong>Release date:</strong> <%= i.release_date %>
     <%= content_tag :p do %>
       <strong>Trailer link:</strong> <%= link_to i.trailer_url, target: "_blank"%>
