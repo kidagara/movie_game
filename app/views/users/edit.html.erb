@@ -1,9 +1,8 @@
 <% content_for :title, "Edit #{@user.name}" %>
+
 <div class="columns">
+	<h1><%= "Edit #{@user.name}'s list" %></h1>
+	<p>Either select the movie from the dropdown list, or click the box with your mouse and start typing the name of the movie you'd like to choose.</p>
 
-<h1><%= "Edit #{@user.name}'s list" %></h1>
-<p>Either select the movie from the dropdown list, or click the box with your mouse and start typing the name of the movie you'd like to choose.</p>
-
-<%= render "form" %>
-
+	<%= render "form" %>
 </div>

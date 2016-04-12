@@ -1,64 +1,64 @@
 <% content_for :title, "#{@user.name}'s list" %>
 
+<div class="columns">
 <h1><%= @user.name %>'s List</h1>
 
-<ul class="no-bullet wtx-movie-list">
-  <li>
-    <div class="place">1st:</div> <%= @user.movie_one %>
-    <div class="points">Points: <%= @user.movie_one_points %></div>
-  </li>
-  <li>
-    <div class="place">2nd:</div> <%= @user.movie_two %>
-    <div class="points">Points: <%= @user.movie_two_points %></div>
-  </li>
-  <li>
-    <div class="place">3rd:</div> <%= @user.movie_three %>
-    <div class="points">Points: <%= @user.movie_three_points %></div>
-  </li>
-  <li>
-      <div class="place">4th:</div> <%= @user.movie_four %>
-      <div class="points">Points: <%= @user.movie_four_points %></div>
-  </li>
-  <li>
-      <div class="place">5th:</div> <%= @user.movie_five %>
-      <div class="points">Points: <%= @user.movie_five_points %></div>
-  </li>
-  <li>
-      <div class="place">6th:</div> <%= @user.movie_six %>
-      <div class="points">Points: <%= @user.movie_six_points %></div>
-  </li>
-  <li>
-      <div class="place">7th:</div> <%= @user.movie_seven %>
-      <div class="points">Points: <%= @user.movie_seven_points %></div>
-  </li>
-  <li>
-      <div class="place">8th:</div> <%= @user.movie_eight %>
-      <div class="points">Points: <%= @user.movie_eight_points %></div>
-  </li>
-  <li>
-      <div class="place">9th:</div> <%= @user.movie_nine %>
-      <div class="points">Points: <%= @user.movie_nine_points %></div>
-  </li>
-  <li>
-      <div class="place">10th:</div> <%= @user.movie_ten %>
-      <div class="points">Points: <%= @user.movie_ten_points %></div>
-  </li>
-  <li>
-      <div class="place">Darkhorse 1:</div> <%= @user.movie_darkhorse_one %>
-      <div class="points">Points: <%= @user.movie_darkhorse_one_points %></div>
-  </li>
-  <li>
-      <div class="place">Darkhorse 2:</div> <%= @user.movie_darkhorse_two %>
-      <div class="points">Points: <%= @user.movie_darkhorse_two_points %></div>
-  </li>
-  <li>
-      <div class="place">Darkhorse 3:</div> <%= @user.movie_darkhorse_three %>
-      <div class="points">Points: <%= @user.movie_darkhorse_three_points %></div>
-  </li>
-</ul>
+  <ul class="no-bullet wtx-movie-list">
+    <li>
+      <div class="place">1st:</div> <%= @user.movie_one %>
+      <div class="points">Points: <%= @user.movie_one_points %></div>
+    </li>
+    <li>
+      <div class="place">2nd:</div> <%= @user.movie_two %>
+      <div class="points">Points: <%= @user.movie_two_points %></div>
+    </li>
+    <li>
+      <div class="place">3rd:</div> <%= @user.movie_three %>
+      <div class="points">Points: <%= @user.movie_three_points %></div>
+    </li>
+    <li>
+        <div class="place">4th:</div> <%= @user.movie_four %>
+        <div class="points">Points: <%= @user.movie_four_points %></div>
+    </li>
+    <li>
+        <div class="place">5th:</div> <%= @user.movie_five %>
+        <div class="points">Points: <%= @user.movie_five_points %></div>
+    </li>
+    <li>
+        <div class="place">6th:</div> <%= @user.movie_six %>
+        <div class="points">Points: <%= @user.movie_six_points %></div>
+    </li>
+    <li>
+        <div class="place">7th:</div> <%= @user.movie_seven %>
+        <div class="points">Points: <%= @user.movie_seven_points %></div>
+    </li>
+    <li>
+        <div class="place">8th:</div> <%= @user.movie_eight %>
+        <div class="points">Points: <%= @user.movie_eight_points %></div>
+    </li>
+    <li>
+        <div class="place">9th:</div> <%= @user.movie_nine %>
+        <div class="points">Points: <%= @user.movie_nine_points %></div>
+    </li>
+    <li>
+        <div class="place">10th:</div> <%= @user.movie_ten %>
+        <div class="points">Points: <%= @user.movie_ten_points %></div>
+    </li>
+    <li>
+        <div class="place">Darkhorse 1:</div> <%= @user.movie_darkhorse_one %>
+        <div class="points">Points: <%= @user.movie_darkhorse_one_points %></div>
+    </li>
+    <li>
+        <div class="place">Darkhorse 2:</div> <%= @user.movie_darkhorse_two %>
+        <div class="points">Points: <%= @user.movie_darkhorse_two_points %></div>
+    </li>
+    <li>
+        <div class="place">Darkhorse 3:</div> <%= @user.movie_darkhorse_three %>
+        <div class="points">Points: <%= @user.movie_darkhorse_three_points %></div>
+    </li>
+  </ul>
+</div>
 
 <div class="columns">
   <%= link_to "Update your list", edit_user_path(@user), class: "button radius" %>
 </div>
-
-

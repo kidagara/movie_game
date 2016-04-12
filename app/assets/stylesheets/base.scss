@@ -7,7 +7,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: #989898 !important;
+	background: #454545 !important;
 }
 
 .main-container {
@@ -15,6 +15,14 @@ body {
 	min-height:100%;
 	position: relative;
 	padding-bottom: 75px;
+}
+
+h1 {
+	font-family: "proxima-nova",sans-serif;
+	font-size: 36pt;
+	text-transform: uppercase;
+	font-weight: 100 !important;
+	font-style: normal;
 }
 
 // header /////////////////////////////////////////////////////////////////////
@@ -27,27 +35,41 @@ header {
 	ul {
 		list-style-type: none; 
 		text-align: center;
+		padding-top: 20px;
+		font-family: "proxima-nova",sans-serif;
+		font-weight: 100 !important;
 		li {
 			display: inline-block !important;
 			padding: 0px 0.9rem;
 			text-transform: uppercase;
-			font-size: 0.75rem;
+			font-size: 20px;
 		}
 	}
+	hr {
+		border-color: #F1A81E !important;
+		background-color: #F1A81E;
+	}
+
 }
 
 .header-title {
 	text-align: center;
-	padding: 20px 0px 0px 0px;
-	font-family: 'Cinzel', serif;
-	font-size: 48px;
+	padding: 100px 0px 0px 0px;
+	font-family: 'Klavika', Helvetica, sans-serif;
+	font-size: 50px;
+	height: 296px;
+	color: white;
+	background-image: image-url("SummerMovieGameBanner.png");
+	@media screen and (min-width: 480px) {
+	  font-size: 80px;
+	}
 }
 
 // movie ///////////////////////////////////////////////////////////////////
 
 .wtx-movie-list {
 	li {
-		padding: 0 1rem 0 1rem;
+		padding: 0.5rem;
 		background: $white;
 	}
 	li:nth-child(odd) {
@@ -70,6 +92,11 @@ header {
 .points {
 	display: inline-block;
 	float: right;
+}
+
+.movie-thumb {
+	line-height: 10px;
+	border: 1px solid red;
 }
 
 // footer //////////////////////////////////////////////////////////////////

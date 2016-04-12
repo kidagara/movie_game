@@ -1,7 +1,8 @@
-<%= link_to movie_path(movie) do %>
-  <div class="medium-3 columns">
-  	<%= image_tag movie.movie_poster, alt: movie.movie_description, style: "max-height: 175px; width: auto;" %>
-	  <h5><%= movie.movie_description %></h5>
-	  <%= movie.release_date %>
-  </div>
-<% end %>
+	  <div class="columns">
+	<%= link_to movie_path(movie) do %>
+	  	<%= image_tag movie.movie_poster, alt: movie.movie_description, style: "max-height: 175px; width: auto;" %>
+		  <h5><%= movie.movie_description %><br/>
+		  <small><%= movie.release_date.try(:strftime, "%B #{movie.release_date.to_date}") %></small>
+		  <small><%= movie.release_date.to_date %></small></h5>
+	<% end %>
+	  </div>

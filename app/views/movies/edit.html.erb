@@ -1,3 +1,5 @@
-<% content_for :title, %W[Edit #{@movie.movie_name}] %>
-<h1>Edit <%= @movie.movie_name %></h1>
+<% content_for :title, "Edit #{@movie.movie_name}" %>
+<div class="columns">
+	<h1>Edit <%= @movie.movie_description %></h1>
 <%= render "form" %>
+</div>
