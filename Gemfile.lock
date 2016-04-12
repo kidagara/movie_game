@@ -132,7 +132,6 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.99.1)
-    mini_magick (4.3.6)
     mini_portile2 (2.0.0)
     minifacture (1.3.0)
       activesupport (>= 2.2)
@@ -174,6 +173,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.16.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -290,13 +290,13 @@ DEPENDENCIES
   imdb (~> 0.8)
   jbuilder (~> 2.0)
   jquery-rails
-  mini_magick
   minifacture
   minitest-rails
   minitest-rails-capybara
   minitest-reporters
   omniauth-identity
   pg
+  puma
   pundit
   rack-livereload
   rails (= 4.2.4)
