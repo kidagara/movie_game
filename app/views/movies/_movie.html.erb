@@ -1,8 +1,7 @@
 <%= link_to movie_path(movie) do %>
   <div class="medium-3 columns">
-	  <% i = Imdb::Movie.new("#{movie.movie_name}") %>
   	<%= image_tag movie.movie_poster, alt: movie.movie_description, style: "max-height: 175px; width: auto;" %>
 	  <h5><%= movie.movie_description %></h5>
-	  <%= movie.release_date.strftime("%b %d") %>
+	  <%= movie.release_date %>
   </div>
 <% end %>
