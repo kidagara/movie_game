@@ -10,7 +10,7 @@
     <strong>Description:</strong> <br/>
     <%= @movie.movie_plot %><br/>
     <strong>Rating:</strong> <%= @movie.movie_rating %><br/>
-    <strong>Release date:</strong> <%= @movie.release_date %>
+    <strong>Release date:</strong> <%= @movie.release_date.try(:strftime, "%B %d") %>
     <%= content_tag :p do %>
       <strong>Trailer link:</strong> <%= link_to @movie.imdb_url, target: "_blank"%>
     <% end if @movie.imdb_url.present?%>

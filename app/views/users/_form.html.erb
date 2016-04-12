@@ -10,7 +10,7 @@
   <% end if @user.errors.any? %>
   <div class="columns">
 
-    1st: <% options = options_from_collection_for_select(Movie.all, 'movie_description', 'movie_description', selected: f.object.movie_one) %>
+    1st: <% options = options_from_collection_for_select(Movie.order("movie_description ASC"), 'movie_description', 'movie_description', selected: f.object.movie_one) %>
     <%= f.select :movie_one, options, :prompt => "Please select a movie..." %>
     <% if current_user.has_role?(:admin) %>
       <%= f.label "1st Place points" %>

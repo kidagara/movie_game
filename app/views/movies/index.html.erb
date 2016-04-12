@@ -5,7 +5,29 @@
 	<p><%= link_to "Create a new movie", new_movie_path, class: "button radius" %></p>
 	<% end %>
 
-	<div class="row medium-up-4 large-up-6">
-		<%= render @movies %>
+	<div class="medium-9 columns">
+		<div class="row medium-up-3 large-up-4">
+			<%= render @movies %>
+		</div>
 	</div>
+
+	<DIV CLASS="medium-3 columns show-for-medium">
+		<h5>My current list</h5>
+		<strong>1.</strong> <%= current_user.movie_one %><br/>
+		<strong>2.</strong> <%= current_user.movie_two %><br/>
+		<strong>3.</strong> <%= current_user.movie_three %><br/>
+		<strong>4.</strong> <%= current_user.movie_four %><br/>
+		<strong>5.</strong> <%= current_user.movie_five %><br/>
+		<strong>6.</strong> <%= current_user.movie_six %><br/>
+		<strong>7.</strong> <%= current_user.movie_seven %><br/>
+		<strong>8.</strong> <%= current_user.movie_eight %><br/>
+		<strong>9.</strong> <%= current_user.movie_nine %><br/>
+		<strong>10.</strong> <%= current_user.movie_ten %><br/>
+		<strong>Darkhorse 1.</strong> <%= current_user.movie_darkhorse_one %><br/>
+		<strong>Darkhorse 2.</strong> <%= current_user.movie_darkhorse_two %><br/>
+		<strong>Darkhorse 3.</strong> <%= current_user.movie_darkhorse_three %><br/>
+
+		<%= link_to "Edit #{current_user.first_name}'s List", edit_user_path(@current_user), class: 'button small radius' %>
+
+	</DIV>
 </div>
