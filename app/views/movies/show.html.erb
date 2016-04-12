@@ -8,7 +8,7 @@
   </div>
   <div class="medium-8 columns">
     <strong>Description:</strong> <br/>
-    <%= @movie.movie_plot %><br/>
+    <div class="movie-description-html"><%= raw(@movie.movie_plot) %></div><br/>
     <strong>Rating:</strong> <%= @movie.movie_rating %><br/>
     <strong>Release date:</strong> <%= @movie.release_date.try(:strftime, "%B %d") %>
     <%= content_tag :p do %>

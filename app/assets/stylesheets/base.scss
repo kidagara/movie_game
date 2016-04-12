@@ -104,6 +104,12 @@ h5 {
 	border: 1px solid red;
 }
 
+.movie-description-html a {
+	color: black;
+	pointer-events: none;
+    cursor: default;
+}
+
 // footer //////////////////////////////////////////////////////////////////
 
 .site-footer {

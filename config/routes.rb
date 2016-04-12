@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   resources :identities, :users, :movies
 
-  root to: "movies#index"
+  root to: "home#index"
 
 end
