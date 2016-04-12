@@ -25,6 +25,11 @@ h1 {
 	font-style: normal;
 }
 
+.panel {
+	background: $light-gray;
+	padding: 20px;
+}
+
 // header /////////////////////////////////////////////////////////////////////
 
 header {
@@ -92,6 +97,10 @@ h5 {
 	display: inline-block;
 	color: $dark-gray;
 	// border: 1px solid red;
+}
+
+.place-movies-all {
+	color: $dark-gray;
 }
 
 .points {

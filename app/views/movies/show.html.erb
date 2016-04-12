@@ -17,6 +17,7 @@
     <%= content_tag :p do %>
       <strong>Box office earnings:</strong> <%= number_to_currency @movie.boxoffice_earnings, precision: 0 %>
     <% end if @movie.boxoffice_earnings > 0 %>
+    <br/><%= link_to "Edit #{current_user.first_name}'s list", edit_user_path(current_user), class: "button radius" %>
     <% if current_user.has_role?(:admin) %>
       <p>
         <%= link_to edit_movie_path(@movie), class: "button radius" do %>

@@ -5,27 +5,29 @@
 	<p><%= link_to "Create a new movie", new_movie_path, class: "button radius" %></p>
 	<% end %>
 
-	<div class="medium-9 columns">
+	<div class="medium-8 columns">
 		<div class="row medium-up-3 large-up-4">
 			<%= render @movies %>
 		</div>
 	</div>
 
-	<DIV CLASS="medium-3 columns show-for-medium">
+	<DIV CLASS="medium-4 columns show-for-medium">
 		<h5>My current list</h5>
-		<strong>1.</strong> <%= current_user.movie_one %><br/>
-		<strong>2.</strong> <%= current_user.movie_two %><br/>
-		<strong>3.</strong> <%= current_user.movie_three %><br/>
-		<strong>4.</strong> <%= current_user.movie_four %><br/>
-		<strong>5.</strong> <%= current_user.movie_five %><br/>
-		<strong>6.</strong> <%= current_user.movie_six %><br/>
-		<strong>7.</strong> <%= current_user.movie_seven %><br/>
-		<strong>8.</strong> <%= current_user.movie_eight %><br/>
-		<strong>9.</strong> <%= current_user.movie_nine %><br/>
-		<strong>10.</strong> <%= current_user.movie_ten %><br/>
-		<strong>Darkhorse 1.</strong> <%= current_user.movie_darkhorse_one %><br/>
-		<strong>Darkhorse 2.</strong> <%= current_user.movie_darkhorse_two %><br/>
-		<strong>Darkhorse 3.</strong> <%= current_user.movie_darkhorse_three %><br/>
+		<ul class="wtx-movie-list no-bullet">
+			<li><strong class="place-movies-all">1.</strong> <%= current_user.movie_one %></li>
+			<li><strong class="place-movies-all">2.</strong> <%= current_user.movie_two %></li>
+			<li><strong class="place-movies-all">3.</strong> <%= current_user.movie_three %></li>
+			<li><strong class="place-movies-all">4.</strong> <%= current_user.movie_four %></li>
+			<li><strong class="place-movies-all">5.</strong> <%= current_user.movie_five %></li>
+			<li><strong class="place-movies-all">6.</strong> <%= current_user.movie_six %></li>
+			<li><strong class="place-movies-all">7.</strong> <%= current_user.movie_seven %></li>
+			<li><strong class="place-movies-all">8.</strong> <%= current_user.movie_eight %></li>
+			<li><strong class="place-movies-all">9.</strong> <%= current_user.movie_nine %></li>
+			<li><strong class="place-movies-all">10.</strong> <%= current_user.movie_ten %></li>
+			<li><strong class="place-movies-all">Darkhorse 1.</strong> <%= current_user.movie_darkhorse_one %></li>
+			<li><strong class="place-movies-all">Darkhorse 2.</strong> <%= current_user.movie_darkhorse_two %></li>
+			<li><strong class="place-movies-all">Darkhorse 3.</strong> <%= current_user.movie_darkhorse_three %></li>
+		</ul>
 
 		<%= link_to "Edit #{current_user.first_name}'s List", edit_user_path(@current_user), class: 'button small radius' %>
 
