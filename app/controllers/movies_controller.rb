@@ -15,6 +15,20 @@ class MoviesController < ApplicationController
   def edit
   end
 
+  def edit_individual
+    @movies = Movie.find(params[:movie_ids])
+  end
+
+  def update_individual
+    @movies = Movie.update(params[:movies].keys, params[:movies].values).reject { |p| p.errors.empty? }
+    if @movies.empty?
+      flash[:notice] = "Movies updated"
+      redirect_to movies_path
+    else
+      render :action => "edit_individual"
+    end
+  end
+
   def create
     @movie = Movie.new(movie_params)
     i = Imdb::Movie.new("#{@movie.movie_name}")

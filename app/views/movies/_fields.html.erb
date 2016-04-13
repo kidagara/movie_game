@@ -1,0 +1,13 @@
+
+<% if params[:field].blank? || params[:field] == "movie_description" %>
+<p>
+  <%= f.label :movie_description %><br />
+  <%= f.text_field :movie_description %>
+</p>
+<% end %>
+<% if params[:field].blank? || params[:field] == "boxoffice_earnings" %>
+<p>
+  <%= f.label :boxoffice_earnings %><br />
+  <%= f.text_field :boxoffice_earnings %>
+</p>
+<% end %>

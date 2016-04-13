@@ -8,7 +8,7 @@
       <% end %>
     </ul>
   <% end if @user.errors.any? %>
-  <div class="columns">
+  <div class="medium-6 columns end">
 
     1st: <% options = options_from_collection_for_select(Movie.order("movie_description ASC"), 'movie_description', 'movie_description', selected: f.object.movie_one) %>
     <%= f.select :movie_one, options, :prompt => "Please select a movie..." %>

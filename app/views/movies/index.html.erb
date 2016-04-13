@@ -33,3 +33,29 @@
 
 	</DIV>
 </div>
+
+<% if current_user.has_role?(:cake) %>
+<p>ignore for now</p>
+	<%= form_tag edit_individual_movies_path do %>
+	  <table>
+	    <tr>
+	      <th></th>
+	      <th>Name</th>
+	      <th>Box Office</th>
+	    </tr>
+	  <% for movie in @movies %>
+	    <tr>
+	      <td><%= check_box_tag "movie_ids[]", movie.id %></td>
+	      <td><%=h movie.movie_description %></td>
+	      <td><%=h movie.boxoffice_earnings %></td>
+	      <td><%= link_to "Edit", edit_movie_path(movie) %></td>
+	      <td><%= link_to "Destroy", movie, :confirm => 'Are you sure?', :method => :delete %></td>
+	    </tr>
+	  <% end %>
+	  </table>
+	  <p>
+	    <%= select_tag :field, options_for_select([["All Fields", ""], ["Movie", "movie_description"], ["Box Office", "boxoffice_earnings"]]) %>
+	    <%= submit_tag "Edit Checked" %>
+	  </p>
+	<% end %>
+<% end %>

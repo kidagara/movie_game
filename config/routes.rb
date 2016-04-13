@@ -7,6 +7,13 @@ Rails.application.routes.draw do
 
   resources :identities, :users, :movies
 
+  resources :movies do
+      collection  do
+        post :edit_individual
+        put  :update_individual
+      end
+   end
+
   root to: "home#index"
 
 end
