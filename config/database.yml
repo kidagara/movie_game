@@ -15,6 +15,6 @@ test:
 
 production:
   <<: *default
-  database: movie_game_development
+  database: movie_game_production
 
 # Before deploying to Heroku, remove branch stuff
