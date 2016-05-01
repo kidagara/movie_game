@@ -3,7 +3,10 @@
 <div class="columns">
 <h1><%= @user.name %>'s List</h1>
 
+    <% if current_user.has_role?(:admin) %>
+
   <%= link_to "Update your list", edit_user_path(@user), class: "button radius" %>
+  <% end %>
 
   <ul class="no-bullet wtx-movie-list">
     <li>
