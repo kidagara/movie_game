@@ -29,12 +29,12 @@
 			<li><strong class="place-movies-all">Darkhorse 3.</strong> <%= current_user.movie_darkhorse_three %></li>
 		</ul>
 		<% if current_user.has_role?(:admin) %>
-		<%= link_to "Edit #{current_user.first_name}'s List", edit_user_path(@current_user), class: 'button small radius' %>
+			<%= link_to "Edit #{current_user.first_name}'s List", edit_user_path(@current_user), class: 'button small radius' %>
 		<% end %>
 	</DIV>
 </div>
 
-<% if current_user.has_role?(:cake) %>
+<% if current_user.has_role?(:admin) %>
 <p>ignore for now</p>
 	<%= form_tag edit_individual_movies_path do %>
 	  <table>
